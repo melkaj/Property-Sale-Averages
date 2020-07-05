@@ -21,3 +21,5 @@ data folder, you will find a bunch of different csv files, but the most importan
 - Add a gif to this readme to show it working
 - Since this project was done using an environment in anaconda, get a docker file for easy replication of this project
 - Add a proper frontend and deploy this on heroku (or host it somewhere)
+- When changing the value of the slider, updating the map is a bit slow. Not too sure if its the limitation of the library, or from sloppy code, or from the amount of data that needs to be shown
+- The hovering over the maps to show the zipcode, shows the number in scientific notation. Ideally, it would the number as price with commas  
