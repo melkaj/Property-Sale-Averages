@@ -10,6 +10,12 @@ This is a fun little project to visualize the average NYC property sale by zipco
 The data was gathered from the sources above. Used pandas to clean it up and put everything into one file. In the 
 data folder, you will find a bunch of different csv files, but the most important one is the zipcode_averages_nyc.csv file which holds all the averages needed. This is my first data science/data visualization project, so the data cleaning definitly is not the most efficient and not perfect. However, we were able to get the project to work on out local machine. We used Bokeh for the data visualization and jupyter for most of the data cleaning and testing. But since Bokeh in jupyter does not allow for dynamically changing maps, we had to take all the code from jupyter and place it into a regular python file. From there, we can start a bokeh serve and get the interactive maps to run on localhost. 
 
+## Setup
+- Since the project does not have a docker file yet for easy replication, you will need to set up your own environment for now. The necessary libraries can be found in the bokehapp.py file. Just look at the modules that are imported.
+- Then in a terminal, go to the root of the project and execute the following command:
+    - **bokeh serve --show bokehapp.py**
+- The project should start to run and the browser will open up localhost and the interactive map should load. This may take a minute or so to load
+
 ## TODO: 
 - Clean up the code in the main file. i.e. adding the functions in another file and even a class if it makes sense. 
 - Add a gif to this readme to show it working
