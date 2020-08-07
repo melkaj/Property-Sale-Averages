@@ -1,27 +1,11 @@
 
-import pandas as pd
+import csv
+import math
 import numpy as np
 from matplotlib import cm
-from matplotlib.colors import ListedColormap, LinearSegmentedColormap
-import matplotlib.pyplot as plt
-import geopandas as gpd
-import csv
-import json
-import math
 
-from bokeh.io import output_notebook, show, output_file
 from bokeh.plotting import figure
 from bokeh.models import GeoJSONDataSource, LinearColorMapper, ColorBar
-from bokeh.palettes import brewer
-from bokeh.palettes import all_palettes 
-import colorcet as cc
-
-
-from bokeh.io import curdoc, output_notebook
-from bokeh.models import Slider, HoverTool
-from bokeh.layouts import widgetbox, row, column
-
-
 
 # Function to take dataframe and map dataframe, find all the averages per zipcode and add these averages to the 
 #     map dataframe
@@ -119,7 +103,7 @@ def rgb_to_hex(rgb_color):
     """Converts rgb color format to rgb hexidecimal and returns hex string
         Bokehs colormaps are in hexidecimal and matplotlibs are in decimal
         This conversion will help build a custom colormap for the bokeh graphs
-        
+
     @param  rgb_color   List of 3 integers. Each integer represents the r g & b values
     EX: rgb_to_hex([7,102, 230])
         returns #0766e6
@@ -142,6 +126,42 @@ def rgb_to_hex(rgb_color):
  
     hex_color = '#' + r + g + b
     return hex_color
+
+
+def get_color_in_rgb_decimal():
+    # Grabbing custom colormap from matplotlib
+    a = cm.get_cmap('cool', 32)
+    b = cm.get_cmap('spring', 32)
+    c = cm.get_cmap('autumn_r', 64)
+    d = cm.get_cmap('bwr_r', 192)
+    e = cm.get_cmap('Greens', 192)
+
+    # Adding the colormaps into one stack to have a more comprehensive color spectrum 
+    newcolors = np.vstack((a(np.linspace(0, 1, 32)), 
+                        b(np.linspace(0, 1, 32)), 
+                        c(np.linspace(0, 1, 64)),
+                        d(np.linspace(0, 0.5, 192)),
+                        e(np.linspace(0, 1, 192)),
+                        ))
+    return newcolors
+
+def get_color_map_in_hex(rgb_colors):
+    """Returns a list of colors but in hexidecimal format
+        Matplotlib colormaps come in rgb decimal and bokeh uses rgb hex
+
+    @param  rgb_colors  np stack of rgb decimals i.e. [7, 102, 230]
+    """
+    list_of_hex_colors = []
+    # Iterating through the list of colors given
+    for i in range(len(rgb_colors)):
+        rgb = []
+        # Iterating through each rgb to get them into a range of 0-255
+        for j in range(3):
+            num = int(rgb_colors[i][j] * 255)
+            rgb.append(num)
+        # Converting the rgb to hex and appending them to a new list
+        list_of_hex_colors.append(rgb_to_hex(rgb))
+    return list_of_hex_colors
 
 
 def create_maps_for_each_year(json_data, map_json, final_color_palette):
