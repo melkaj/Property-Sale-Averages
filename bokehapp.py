@@ -268,3 +268,15 @@ slider.on_change('value', update_plot)
 # Make a column layout of widgetbox(slider) and plot, and add it to the current document
 layout = column(p,widgetbox(slider))
 curdoc().add_root(layout)
+
+
+
+
+
+
+
+
+
+# Personal note (when in CTP2020 directory)
+#   conda env list
+#   activate ctp
