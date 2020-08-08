@@ -3,7 +3,7 @@
 ## Table of contents
 1. [Sources](#sources)
 
-## Sources: <a name="sources" />
+## Sources: <a name="sources"></a>
 - ### Propery sale averages by zipcode
 https://www1.nyc.gov/site/finance/taxes/property-annualized-sales-update.page
 - ### NYC shapefiles by zipcode
