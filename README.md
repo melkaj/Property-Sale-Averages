@@ -27,8 +27,8 @@ I then created the Bokeh plots out of cleaned up data but then another issue ros
 The next realization was how ugly the code was. Taking everything out from Jupyter and placing it into its own python file made it evident how sloppy the code was. I refactored some of the code and created some functions to make the code more readable and scalable. Then placed majority of the functions into another file. The code still does not look perfect, but it is in a much better place than what it was before.
 
 ## Setup <a name="setup"></a>
-- The most updated files of the project is located in the 'src' folder. The main file is 'bokehapp.py' and helper functions can be found in 'utils.py' 
-- Since the project does not have a docker file yet for easy replication, you will need to set up your own environment for now. The necessary libraries can be found in 'src/bokehapp.py' and 'src/utils.py'. Just look at the modules that are imported.
+- The most updated files of the project is located in the 'src' folder. The main file is 'bokehplot.py' and helper functions can be found in 'utils.py' 
+- Since the project does not have a docker file yet for easy replication, you will need to set up your own environment for now. The necessary libraries can be found in 'src/bokehplot.py' and 'src/utils.py'. Just look at the modules that are imported.
 - Then in a terminal, move into the 'src' folder and execute the following command:
     - **bokeh serve --show bokehplot.py**
 - The project should start to run and the browser will open up localhost and the interactive map should load. This may take a minute or so to load
