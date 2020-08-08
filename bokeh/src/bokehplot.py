@@ -110,6 +110,10 @@ slider.on_change('value', update_plot)
 layout = column(p,widgetbox(slider))
 curdoc().add_root(layout)
 
+from bokeh.embed import server_document
+script = server_document("https://localhost/5006/bokehplot")
+print(script)
+
 # Personal note (when in CTP2020/src directory)
 #   conda env list
 #   activate ctp

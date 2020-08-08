@@ -1,6 +1,9 @@
 # CTP2020 Project - Property Sale Averages
 
-## Sources:
+## Table of contents
+1. [Sources](#sources)
+
+## Sources: <a name="sources" />
 - ### Propery sale averages by zipcode
 https://www1.nyc.gov/site/finance/taxes/property-annualized-sales-update.page
 - ### NYC shapefiles by zipcode
@@ -26,9 +29,10 @@ The next realization was how ugly the code was. Taking everything out from Jupyt
     - **bokeh serve --show bokehapp.py**
 - The project should start to run and the browser will open up localhost and the interactive map should load. This may take a minute or so to load
 
-## TODO: 
-- Add a gif to this readme to show it working
-- Add a proper frontend and deploy this somewhere (if even possible)
-- Since this project was done using an environment in anaconda, get a docker file for easy replication of this project
-- The hovering over the maps to show the zipcode, shows the number in scientific notation. Ideally, it would the number as price with commas  
-- When changing the value of the slider, updating the map is a bit slow. Not too sure if its the limitation of the library, or from sloppy code, or from the amount of data that needs to be shown
+## Possible future additions
+The goal of this project was to get my feet wet in data science by gathering some data and then visualizing it. Now that goal has been reached, there are some cool things that can be added to this project. (Unfortunately, life is taking over and these additions won't come anytime soon) 
+- Make this into a web application. Use Vue or React to create a frontend and then embed these Bokeh plots to the webpage
+    - Then deploy the web application
+- Use Docker to make this more replicable
+- While hovering over the plot, the average is in scientific notation and not in USD
+- The Bokeh plot changes quite slowly (i.e. when moving the slider); Would be nice to figure out if it is slow due to the limitations of the Bokeh library or from my messy code

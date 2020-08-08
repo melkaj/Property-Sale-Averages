@@ -1,0 +1,26 @@
+<html>
+    <head>
+    
+    </head>
+    <body>
+        <h1>
+            Hello, World
+        </h1>
+        <div>
+            <script id="1658">
+                var xhr = new XMLHttpRequest()
+                xhr.responseType = 'blob';
+                xhr.open('GET', "https://localhost/5006/bokehplot/autoload.js?bokeh-autoload-element=1658&bokeh-app-path=/5006/bokehplot&bokeh-absolute-url=https://localhost/5006/bokehplot", true);
+                xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+
+                xhr.onload = function (event) {
+                  var script = document.createElement('script'),
+                  src = URL.createObjectURL(event.target.response);
+                  script.src = src;
+                  document.body.appendChild(script);
+                };
+              xhr.send();
+              </script>
+        </div>
+    </body>
+</html>
