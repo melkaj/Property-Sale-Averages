@@ -6,6 +6,7 @@
 3. [What happened during the creation of the project?](#outline)
 4. [Setup](#setup)
 5. [Possible future additions](#future)
+6. [Screenshots of the plots](#screenshots)
 
 ## Sources: <a name="sources"></a>
 - ### Propery sale averages by zipcode
@@ -32,8 +33,6 @@ The next realization was how ugly the code was. Taking everything out from Jupyt
     - **bokeh serve --show bokehplot.py**
 - The project should start to run and the browser will open up localhost and the interactive map should load. This may take a minute or so to load
 
-## Notes about the project
-
 ## Possible future additions <a name="future"></a>
 The goal of this project was to get my feet wet in data science by gathering some data and then visualizing it. Now that goal has been reached, there are some cool things that can be added to this project. (Unfortunately, life is taking over at the moment and these additions won't come anytime soon) 
 - Make this into a web application. Use Vue or React to create a frontend and then embed these Bokeh plots to the webpage
@@ -42,7 +41,7 @@ The goal of this project was to get my feet wet in data science by gathering som
 - While hovering over the plot, the average is in scientific notation and not in USD
 - The Bokeh plot changes quite slowly (i.e. when moving the slider); Would be nice to figure out if it is slow due to the limitations of the Bokeh library or from my messy code
 
-## A few screenshots of the plot
+## A few screenshots of the plot <a name="screenshots"></a>
 
 - Property Sale Averages from 2005
 ![2005](./screenshots/2005.PNG)
