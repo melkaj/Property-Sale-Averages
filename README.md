@@ -25,13 +25,14 @@ I then created the Bokeh plots out of cleaned up data but then another issue ros
 
 The next realization was how ugly the code was. Taking everything out from Jupyter and placing it into its own python file made it evident how sloppy the code was. I refactored some of the code and created some functions to make the code more readable and scalable. Then placed majority of the functions into another file. The code still does not look perfect, but it is in a much better place than what it was before.
 
-
 ## Setup <a name="setup"></a>
 - The most updated files of the project is located in the 'src' folder. The main file is 'bokehapp.py' and helper functions can be found in 'utils.py' 
 - Since the project does not have a docker file yet for easy replication, you will need to set up your own environment for now. The necessary libraries can be found in 'src/bokehapp.py' and 'src/utils.py'. Just look at the modules that are imported.
 - Then in a terminal, move into the 'src' folder and execute the following command:
-    - **bokeh serve --show bokehapp.py**
+    - **bokeh serve --show bokehplot.py**
 - The project should start to run and the browser will open up localhost and the interactive map should load. This may take a minute or so to load
+
+## Notes about the project
 
 ## Possible future additions <a name="future"></a>
 The goal of this project was to get my feet wet in data science by gathering some data and then visualizing it. Now that goal has been reached, there are some cool things that can be added to this project. (Unfortunately, life is taking over at the moment and these additions won't come anytime soon) 
@@ -40,3 +41,14 @@ The goal of this project was to get my feet wet in data science by gathering som
 - Use Docker to make this more replicable
 - While hovering over the plot, the average is in scientific notation and not in USD
 - The Bokeh plot changes quite slowly (i.e. when moving the slider); Would be nice to figure out if it is slow due to the limitations of the Bokeh library or from my messy code
+
+## A few screenshots of the plot
+
+- Property Sale Averages from 2005
+![2005](./screenshots/2005.PNG)
+
+- Property Sale Averages from 2006
+![2006](./screenshots/2006.PNG) 
+
+- Property Sale Averages from 2007
+![2007](./screenshots/2007.PNG) 

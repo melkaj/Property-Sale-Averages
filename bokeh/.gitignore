@@ -3,4 +3,5 @@ data/csv-files
 data/excel_data.zip
 setup.txt
 bokehapp.py
+temp.html
 /test-files
