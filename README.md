@@ -1,9 +1,9 @@
 # CTP2020 Project - Property Sale Averages
 
 ## Sources:
-### Propery sale averages by zipcode
+- ### Propery sale averages by zipcode
 https://www1.nyc.gov/site/finance/taxes/property-annualized-sales-update.page
-### NYC shapefiles by zipcode
+- ### NYC shapefiles by zipcode
 https://data.cityofnewyork.us/Business/Zip-Code-Boundaries/i8iw-xf4u/data?no_mobile=true
 
 ## What am I looking at?
