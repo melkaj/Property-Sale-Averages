@@ -37,7 +37,7 @@ The next realization was how ugly the code was. Taking everything out from Jupyt
 The goal of this project was to get my feet wet in data science by gathering some data and then visualizing it. Now that goal has been reached, there are some cool things that can be added to this project. (Unfortunately, life is taking over at the moment and these additions won't come anytime soon) 
 - Make this into a web application. Use Vue or React to create a frontend and then embed these Bokeh plots to the webpage
     - Then deploy the web application
-- The code itself is not by best work and would love to fix it and make it more readable and scalable
+- The code itself is not by best work and would love to refactor it and make it more readable and scalable
 - Use Docker to make this more replicable
 - While hovering over the plot, the average is in scientific notation and not in USD
 - The Bokeh plot changes quite slowly (i.e. when moving the slider); Would be nice to figure out if it is slow due to the limitations of the Bokeh library or from my messy code
