@@ -61,7 +61,7 @@ list_of_json_data = [json.dumps(map_json_elem) for map_json_elem in list_of_map_
 
 
 
-# Creating the maps
+# Creating the final maps from 2005 to 2019
 maps = []
 
 for i in range(len(list_of_map_json)):
@@ -109,11 +109,3 @@ slider.on_change('value', update_plot)
 # Make a column layout of widgetbox(slider) and plot, and add it to the current document
 layout = column(p,widgetbox(slider))
 curdoc().add_root(layout)
-
-from bokeh.embed import server_document
-script = server_document("https://localhost/5006/bokehplot")
-print(script)
-
-# Personal note (when in CTP2020/src directory)
-#   conda env list
-#   activate ctp

@@ -129,6 +129,11 @@ def rgb_to_hex(rgb_color):
 
 
 def get_color_in_rgb_decimal():
+    """Returns a custom color map
+        Various colors were used from matplotlib
+        They were then appended onto eachother through a numpy stack
+    """
+
     # Grabbing custom colormap from matplotlib
     a = cm.get_cmap('cool', 32)
     b = cm.get_cmap('spring', 32)
@@ -171,33 +176,38 @@ def create_maps_for_each_year(json_data, map_json, final_color_palette):
     # Using the converted matplotlib colors
     final_palette = final_color_palette
 
-    #Instantiate LinearColorMapper that linearly maps numbers in a range, into a sequence of colors.
+    # Instantiate LinearColorMapper that linearly maps numbers in a range, into a sequence of colors.
     max_value = 25000000
     color_mapper = LinearColorMapper(palette = final_palette, low = 0, high = max_value)
 
 
-    #Define custom tick labels for color bar.
+    # Define custom tick labels for color bar.
     tick_labels = {'0': '$0', '5000000': '$5M', '10000000':'$10M', '15000000':'$15M', '20000000':'$20M', '25000000':'$25M'}
 
-    #Create color bar. 
+    # Create color bar. 
     color_bar = ColorBar(color_mapper=color_mapper, label_standoff=8, width = 500, height = 20, border_line_color=None,location = (0,0), orientation = 'horizontal', major_label_overrides = tick_labels)
 
-    #Create figure object.
-    p = figure(title = 'NYC Property Sales in 2005', plot_height = 600 , plot_width = 600, toolbar_location = None)
+    # Create figure object.
+    p = figure(title = 'NYC Property Sales', plot_height = 600 , plot_width = 600, toolbar_location = None)
     p.xgrid.grid_line_color = None
     p.ygrid.grid_line_color = None
 
-    #Add patch renderer to figure. 
+    # Add patch renderer to figure. 
     p.patches('xs','ys', source = geosource,fill_color = {'field' :'AVERAGES', 'transform' : color_mapper}, line_color = 'black', line_width = 0.25, fill_alpha = 1)
 
-    #Specify figure layout.
+    # Specify figure layout.
     p.add_layout(color_bar, 'below')
     
     return p
 
 
-#Define function that returns json_data for year selected by user.    
 def get_json_data(list_of_json_data, selectedYear):
+    """Returns json data based on the desired year
+
+    @param  list_of_json_data   A list of all the jsons from year 2005 through 2019
+    @param  selectedYear        A string which represents the desired year
+    """
+
     index = int(selectedYear) - 2005
     print(index)
     return list_of_json_data[index]
