@@ -24,7 +24,7 @@ Once the data was ready, the next step was to use Geopandas to visualize the plo
 
 I then created the Bokeh plots out of cleaned up data but then another issue rose. Jupyer did not allow the slider to change the contents of the plot. So, I took all the code from Jupyter and placed it into its own python file. After doing so, I set up a Bokeh server and the plot worked perfect.
 
-The next realization was how ugly the code was. Taking everything out from Jupyter and placing it into its own python file made it evident how sloppy the code was. I refactored some of the code and created some functions to make the code more readable and scalable. Then placed majority of the functions into another file. The code still does not look perfect, but it is in a much better place than what it was before.
+The next realization was how ugly the code was. Taking everything out from Jupyter and placing it into its own python file made it evident how sloppy the code appeared. I refactored some of the code and created some functions to make the code more readable. Then placed majority of the functions into another file. The code still does not look perfect, but it is in a much better place compared to what it was before.
 
 ## Setup <a name="setup"></a>
 - The most updated files of the project is located in the 'src' folder. The main file is 'bokehplot.py' and helper functions can be found in 'utils.py' 
@@ -37,6 +37,7 @@ The next realization was how ugly the code was. Taking everything out from Jupyt
 The goal of this project was to get my feet wet in data science by gathering some data and then visualizing it. Now that goal has been reached, there are some cool things that can be added to this project. (Unfortunately, life is taking over at the moment and these additions won't come anytime soon) 
 - Make this into a web application. Use Vue or React to create a frontend and then embed these Bokeh plots to the webpage
     - Then deploy the web application
+- The code itself is not by best work and would love to fix it and make it more readable and scalable
 - Use Docker to make this more replicable
 - While hovering over the plot, the average is in scientific notation and not in USD
 - The Bokeh plot changes quite slowly (i.e. when moving the slider); Would be nice to figure out if it is slow due to the limitations of the Bokeh library or from my messy code

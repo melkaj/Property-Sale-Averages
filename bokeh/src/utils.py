@@ -55,14 +55,14 @@ def add_averages_to_map_dataframe(dataframe, map_dataframe):
     # so, we need to match them up
     list_of_zipcodes_old = list(dataframe.index)
     list_of_zipcodes_new = list(map_dataframe_copy['ZIPCODE'])
-    new_average_list = []
+    new_average_list = combine_lists(list_of_zipcodes_old, list_of_zipcodes_new, averages)
 
-    for zip in list_of_zipcodes_new:
-        if zip in list_of_zipcodes_old:
-            index = list_of_zipcodes_old.index(zip)
-            new_average_list.append(averages[index])
-        else:
-            new_average_list.append(0)
+    # for zip in list_of_zipcodes_new:
+    #     if zip in list_of_zipcodes_old:
+    #         index = list_of_zipcodes_old.index(zip)
+    #         new_average_list.append(averages[index])
+    #     else:
+    #         new_average_list.append(0)
             
     # Dropping columns that are not needed (the boroughs)
     dataframe = dataframe.drop(boroughs, axis=1)
@@ -72,15 +72,16 @@ def add_averages_to_map_dataframe(dataframe, map_dataframe):
     return map_dataframe_copy
 
 
-def match_list_values(list_one, list_two):
-    matched_list = []
+def combine_lists(list_one, list_two, reference_list):
+    combined_list = []
 
     for zip in list_two:
         if zip in list_one:
             index = list_one.index(zip)
-            matched_list.append(averages[index])
+            combined_list.append(reference_list[index])
         else:
-            matched_list.append(0)
+            combined_list.append(0)
+    return combined_list
 
 
 def get_dataframes_for_each_year(main_dataframe, years):
